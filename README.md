@@ -21,3 +21,11 @@ In production don't use the `sanic` server, use something like [gunicorn](https:
 ```bash
 $ gunicorn server:app --bind 0.0.0.0:8000 --worker-class sanic.worker.GunicornWorker
 ```
+
+## Tests
+
+To run the tests
+
+```bash
+$ python -m unittest
+```
