@@ -1,7 +1,8 @@
 from sanic import Sanic
 from sanic.response import json
 
-app = Sanic()
+app = Sanic(name="awesome_book_store")
+
 
 @app.route('/')
 async def test(request):

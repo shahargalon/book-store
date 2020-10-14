@@ -1,5 +1,6 @@
-from server import app
 import unittest
+from src.server import app
+
 
 class EndpointsTests(unittest.TestCase):
     ''' Unit testcases for REST APIs '''
@@ -12,6 +13,7 @@ class EndpointsTests(unittest.TestCase):
         request, response = app.test_client.get('/')
         body = response.json
         assert body['hello'] == "world"
+
 
 if __name__ == '__main__':
     unittest.main()
