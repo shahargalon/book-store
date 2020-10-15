@@ -5,7 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pycodestyle = "*"
-v = {editable = true,version = "*"}
+#v = {editable = true,version = "*"}
 
 [packages]
 sanic = "*"
