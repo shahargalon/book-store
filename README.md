@@ -11,7 +11,7 @@ The backend for an awesome book store app!
 
 1. Create a virtual environment and activate it `pipenv shell`.
 2. Install all dependencies `pipenv install`.
-3. Run the server with `python server.py`.
+3. Run the server with `python src/server.py`.
 4. Open an HTTP client at hit [http://localhost:8000](http://localhost:8000).
 
 # Production
@@ -23,6 +23,12 @@ $ gunicorn server:app --bind 0.0.0.0:8000 --worker-class sanic.worker.GunicornWo
 ```
 
 ## Tests
+
+To run the linter
+
+```bash
+$ pycodestyle .
+```
 
 To run the tests
 
