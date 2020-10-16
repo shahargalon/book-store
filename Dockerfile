@@ -5,5 +5,5 @@ COPY Pipfile.lock Pipfile src ./
 RUN pip install pipenv && pipenv install --system --dev  --ignore-pipfile
 EXPOSE 8000
 
-CMD [ "python", "src/server.py" ]
+CMD [ "python", "server.py" ]
 
