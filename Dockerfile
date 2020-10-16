@@ -1,11 +1,9 @@
 FROM python:3
 
-RUN pip install pipenv
 WORKDIR /usr/src/app
-COPY Pipfile .
-COPY Pipfile.lock .
-RUN pipenv install --system  --ignore-pipfile
+COPY Pipfile.lock Pipfile src ./
+RUN pip install pipenv && pipenv install --system --dev  --ignore-pipfile
 EXPOSE 8000
-COPY server.py .
-CMD [ "python", "server.py" ]
+
+CMD [ "python", "src/server.py" ]
 
