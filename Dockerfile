@@ -6,4 +6,3 @@ RUN pip install pipenv && pipenv install --system --ignore-pipfile
 EXPOSE 8000
 
 CMD [ "python", "src/server.py" ]
-
