@@ -1,0 +1,6 @@
+#exclude these file from the image
+
+.git/
+.gitignore
+test/
+.dockerignore
