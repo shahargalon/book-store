@@ -3,7 +3,7 @@ name: CI-workflow to run test on the code
 on: [push]
 
 jobs:
-  run tests on code:
+  run-tests-on-code:
 
     runs-on: ubuntu-latest
 
