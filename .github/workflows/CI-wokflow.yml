@@ -4,9 +4,9 @@ description: run some test on every push on the repo
 on: [push]
 
 jobs:
-  build:
+  run tests on code:
 
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: action/checkout@v2
