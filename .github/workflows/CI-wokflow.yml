@@ -10,14 +10,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: install pipenv 
-      run: pip install pipenv && pipenv shell
+    - name: setup Python    
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
 
-    - name: going into env shell
-      run: pipenv shell
-
-    - name:  installing dependencys
-      run: pipenv install --dev --ignore-pipfile
+    - name: install pipenv & dependencies 
+      run:  |
+      pip install pipenv
+      pipenv install --system --dev --igrone-pipfile
       
     - name: run the linter
       run: pycodestyle .
