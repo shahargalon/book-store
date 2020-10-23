@@ -1,5 +1,4 @@
-name: CI-workflow
-description: run some test on every push on the repo
+name: CI-workflow to run test on the code
 
 on: [push]
 
