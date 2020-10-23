@@ -24,4 +24,4 @@ jobs:
       run: pipenv run pycodestyle .
 
     - name: run the tests
-      run: pipenv run python -m unitest
+      run: pipenv run python -m unittest
