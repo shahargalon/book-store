@@ -10,8 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: install pipenv and going into env shell
+    - name: install pipenv 
       run: pip install pipenv && pipenv shell
+
+    - name: going into env shell
+      run: pipenv shell
 
     - name:  installing dependencys
       run: pipenv install --dev --ignore-pipfile
