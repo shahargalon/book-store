@@ -17,8 +17,8 @@ jobs:
 
     - name: install pipenv & dependencies 
       run:  |
-      pip install pipenv
-      pipenv install --system --dev --igrone-pipfile
+        pip install pipenv
+        pipenv install --system --dev --igrone-pipfile
       
     - name: run the linter
       run: pycodestyle .
