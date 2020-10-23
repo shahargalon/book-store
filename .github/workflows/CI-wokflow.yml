@@ -18,11 +18,10 @@ jobs:
     - name: install pipenv & dependencies 
       run:  |
         pip install pipenv
-        pipenv shell
         pipenv install --deploy --dev 
       
     - name: run the linter
-      run: pycodestyle .
+      run: pipenv run pycodestyle .
 
     - name: run the tests
-      run: python -m unitest 
+      run: pipenv run python -m unitest
