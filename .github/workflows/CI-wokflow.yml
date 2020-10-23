@@ -11,14 +11,14 @@ jobs:
     steps:
     - uses: action/checkout@v2
 
-    -name: install pipenv and going into env shell
+    - name: install pipenv and going into env shell
       run: pip install pipenv && pipenv shell
 
-    -name:  installing dependencys
+    - name:  installing dependencys
       run: pipenv install --dev --ignore-pipfile
       
-    -name: run the linter
+    - name: run the linter
       run: pycodestyle .
 
-    -name: run the tests
+    - name: run the tests
       run: python -m unitest 
