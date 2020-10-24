@@ -1,4 +1,4 @@
 steps:
-- name: build the docker image and push it to the registry
+- name: 'build the docker image and push it to the registry'
   args: ['build', '-t', 'gcr.io/sodium-dynamo-292520/book-store', '.']
 images: ['gcr.io/sodium-dynamo-292520/book-store']
