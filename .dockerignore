@@ -4,3 +4,4 @@
 .gitignore
 test/
 .dockerignore
+.github/**

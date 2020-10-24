@@ -1,0 +1,27 @@
+name: CI-workflow to run test on the code
+
+on: [push]
+
+jobs:
+  run-tests-on-code:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: setup Python    
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: install pipenv & dependencies 
+      run:  |
+        pip install pipenv
+        pipenv install --deploy --dev 
+      
+    - name: run the linter
+      run: pipenv run pycodestyle .
+
+    - name: run the tests
+      run: pipenv run python -m unittest
