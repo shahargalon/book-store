@@ -17,6 +17,7 @@ spec:
       containers:
       - name: book-store
         image: book-store
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
 ---
