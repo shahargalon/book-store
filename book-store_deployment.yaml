@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: book-store-deployment
+  namespace: book-store-ns
   labels:
     app: books-store
 spec:
@@ -24,7 +25,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  name: book-store-service
+  name: book-store-internal-service
+  namespace: book-store-ns
 spec:
   selector:
     app: book-store
