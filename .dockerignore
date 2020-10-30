@@ -7,3 +7,4 @@ test/
 .github/**
 cloudbuild.yml
 book-store_deployment.yaml
+book-store-ingress.yaml
