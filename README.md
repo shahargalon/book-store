@@ -1,8 +1,7 @@
 # Book Store
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/shahargalon/book-store/CI-workflow%20to%20run%20test%20on%20the%20code?label=CI-workflow&logo=GitHub)
 
 The backend for an awesome book store app!
-
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/shahargalon/book-store/CI-workflow%20to%20run%20test%20on%20the%20code?label=CI-workflow&logo=GitHub)
 
 ## Pre Requirements
 
