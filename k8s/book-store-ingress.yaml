@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata: 
   name: book-store-ingress
-  namespace: book-store
+  namespace: backend
 spec:
   rules:
   - host: book-store.shahargn.com

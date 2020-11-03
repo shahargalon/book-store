@@ -6,6 +6,4 @@ test/
 .dockerignore
 .github/**
 cloudbuild.yml
-book-store-deployment.yaml
-book-store-ingress.yaml
-book-store-ns.yaml
+k8s/**

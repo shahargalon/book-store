@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: book-store-deployment
-  namespace: book-store
+  namespace: backend
   labels:
     app: books-store
 spec:
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata: 
   name: book-store-internal-service
-  namespace: book-store
+  namespace: backend
 spec:
   selector:
     app: book-store
