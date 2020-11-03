@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: book-store-deployment
+  namespace: backend
+  labels:
+    app: books-store
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: book-store
+  template:
+    metadata:
+      labels:
+        app: book-store
+    spec:
+      containers:
+      - name: book-store
+        image: book-store
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: book-store-internal-service
+  namespace: backend
+spec:
+  selector:
+    app: book-store
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000

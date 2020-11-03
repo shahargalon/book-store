@@ -6,3 +6,4 @@ test/
 .dockerignore
 .github/**
 cloudbuild.yml
+k8s/**
