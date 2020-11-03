@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: book-store
-        image: gcr.io/sodium-dynamo-292520/book-store:latest
+        image: gcr.io/$PROJECT_ID/book-store:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
