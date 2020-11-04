@@ -7,7 +7,7 @@ spec:
   rules:
   - host: book-store.shahargn.com
     http:
-      paths:  
+      paths :  
       - backend:
           serviceName: book-store-internal-service
           servicePort: 8000

@@ -30,6 +30,7 @@ metadata:
 spec:
   selector:
     app: book-store
+    type: NodePort
   ports:
     - protocol: TCP
       port: 8000
