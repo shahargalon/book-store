@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: book-store
-        image: gcr.io/sodium-dynamo-292520/book-store:$COMMIT_SHA
+        image: gcr.io/sodium-dynamo-292520/book-store
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
