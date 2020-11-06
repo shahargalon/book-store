@@ -4,8 +4,8 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/book-store:$SHORT_SHA']
 
-- name: ubuntu
-  args: ['bash','-c','sed -i "s,IMAGE_VAR,gcr.io/$PROJECT_ID/book-store:$SHORT_SHA," k8s/book-store-deployment.yaml']
+#- name: ubuntu
+#  args: ['bash','-c','sed -i "s,IMAGE_VAR,gcr.io/$PROJECT_ID/book-store:$SHORT_SHA," k8s/book-store-deployment.yaml']
 
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'k8s/book-store-ns.yaml']
