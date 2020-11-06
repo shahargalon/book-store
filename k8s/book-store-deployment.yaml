@@ -16,7 +16,7 @@ spec:
         app: book-store
     spec:
       containers:
-      - name: book-store1
+      - name: book-store
         image: gcr.io/$PROJECT_ID/book-store:$SHORT_SHA
         imagePullPolicy: Always
         ports:
