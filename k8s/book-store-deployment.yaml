@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: book-store
-        image: gcr.io/$PROJECT_ID/book-store:$SHORT_SHA
+        image: IMAGE_VAR
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
