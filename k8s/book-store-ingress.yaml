@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata: 
   name: book-store-ingress
@@ -7,11 +7,7 @@ spec:
   rules:
   - host: book-store.shahargn.com
     http:
-      paths: 
-      - path: /
-        pathType: Prefix 
-        backend:
-          service:
-            name: book-store-internal-service
-            port:
-              number: 8000
+      paths :  
+      - backend:
+          serviceName: book-store-internal-service
+          servicePort: 8000

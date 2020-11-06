@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - name: book-store
-        image: book-store
-        imagePullPolicy: IfNotPresent
+        image: IMAGE_VAR
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
 ---
@@ -30,6 +30,7 @@ metadata:
 spec:
   selector:
     app: book-store
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8000

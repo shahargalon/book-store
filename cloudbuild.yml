@@ -1,4 +1,20 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/sodium-dynamo-292520/book-store', '.']
-images: ['gcr.io/sodium-dynamo-292520/book-store']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/book-store:$SHORT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/book-store:$SHORT_SHA']
+
+- name: ubuntu
+  args: ['bash','-c','sed -i "s,IMAGE_VAR,gcr.io/$PROJECT_ID/book-store:$SHORT_SHA," k8s/book-store-deployment.yaml']
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply', '-f', 'k8s/book-store-ns.yaml']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=prod'
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply', '-f', 'k8s/']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=prod'
