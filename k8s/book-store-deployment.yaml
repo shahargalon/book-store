@@ -21,11 +21,11 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
-        resources:
-          request:
-            cpu: 
-          limits:
-            cpu:  
+        #resources:
+        #  request:
+        #    cpu: 
+        #  limits:
+        #    cpu:  
 ---
 apiVersion: v1
 kind: Service
