@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - name: book-store
-        image: book-store #IMAGE_VAR
-        imagePullPolicy: IfNotPresent #Always
+        image: IMAGE_VAR
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
         resources:
