@@ -17,15 +17,15 @@ spec:
     spec:
       containers:
       - name: book-store
-        image: IMAGE_VAR
-        imagePullPolicy: Always
+        image: book-store #IMAGE_VAR
+        imagePullPolicy: IfNotPresent #Always
         ports:
         - containerPort: 8000
-        #resources:
-        #  request:
-        #    cpu: 
-        #  limits:
-        #    cpu:  
+        resources:
+          requests:
+            cpu: 80m
+          limits:
+            cpu: 100m
 ---
 apiVersion: v1
 kind: Service
