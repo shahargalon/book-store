@@ -9,6 +9,7 @@ pycodestyle = "*"
 [packages]
 sanic = "*"
 gunicorn = "*"
+peewee = "*"
 
 [requires]
 python_version = "3.8"
