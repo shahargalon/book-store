@@ -3,7 +3,7 @@ from sanic import Sanic
 from sanic.response import json
 
 app = Sanic(name="awesome_book_store")
-psql_db = PostgresqlDatabase('book_store', user='nirgalon')
+psql_db = PostgresqlDatabase('book_store', user='postgres', password='' , host='172.17.0.1', port=5432)
 
 
 class Person(Model):
