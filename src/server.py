@@ -36,5 +36,10 @@ async def create_person(request):
 async def test(request):
     return json({'hello': 'world'})
 
+def create_tables():
+    with psql_db:
+        psql_db.create_tables([Person])
+
 if __name__ == '__main__':
+    create_tables()
     app.run(host='0.0.0.0', port=8000)
