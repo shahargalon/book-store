@@ -28,7 +28,6 @@ async def create_person(request):
     new_person.save()
     return json(model_to_dict(new_person))
 
-
 @app.route('/person',)
 async def create_person(request):
     persons = Person.select().dicts()
