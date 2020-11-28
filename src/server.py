@@ -15,6 +15,7 @@ class Person(Model):
     class Meta:
         database = psql_db
 
+
 with psql_db:
     psql_db.create_tables([Person])
 
