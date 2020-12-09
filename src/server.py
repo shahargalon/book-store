@@ -4,7 +4,7 @@ from sanic.response import json
 from playhouse.shortcuts import model_to_dict
 
 app = Sanic(name="awesome_book_store")
-psql_db = PostgresqlDatabase('book_store', user='postgres', password='', host='172.17.0.1', port=5432)  # nopep8
+psql_db = PostgresqlDatabase('book_store', user, password, host, port)  
 
 
 class Person(Model):
