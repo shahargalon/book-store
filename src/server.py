@@ -11,8 +11,8 @@ user = os.getenv('user')
 password = os.getenv('password')
 host = os.getenv('host')
 port = os.getenv('port')
-print('user', user, "password", password, "host", host, "port", host)
-psql_db = PostgresqlDatabase('book_store', user, password, host, port)
+
+psql_db = PostgresqlDatabase('book_store', user=user, password=password, host=host, port=port)
 
 
 class Person(Model):
