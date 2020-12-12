@@ -23,7 +23,7 @@ spec:
         - containerPort: 8000
         env:
         - name: DB_HOST
-          value: 34.78.100.176
+          value: "34.78.100.176"
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
