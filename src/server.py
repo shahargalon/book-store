@@ -2,9 +2,17 @@ from peewee import *
 from sanic import Sanic
 from sanic.response import json
 from playhouse.shortcuts import model_to_dict
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 app = Sanic(name="awesome_book_store")
-psql_db = PostgresqlDatabase('book_store', user="asdasdasdasdasdasdasd", password, host, port)
+user = os.getenv('user')
+password = os.getenv('password')
+host = os.getenv('host')
+port = os.getenv('port')
+print('user', user, "password", password, "host", host, "port", host)
+psql_db = PostgresqlDatabase('book_store', user, password, host, port)
 
 
 class Person(Model):
