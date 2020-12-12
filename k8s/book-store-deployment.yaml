@@ -27,9 +27,9 @@ spec:
         - name: DB_PORT
           value: "5432"
         - name: DB_USER
-          value: postgres
+          value: "postgres"
         - name: DB_PASSWORD
-          value: 9Gmj2mqhdDO4xdPd   
+          value: "9Gmj2mqhdDO4xdPd"   
         resources:
           requests:
             cpu: 80m
