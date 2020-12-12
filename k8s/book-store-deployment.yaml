@@ -21,6 +21,15 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
+        env:
+        - name: DB_HOST
+          value: 34.78.100.176
+        - name: DB_PORT
+          value: 
+        - name: DB_USER
+          value: postgres
+        - name: DB_PASSWORD
+          value: 9Gmj2mqhdDO4xdPd   
         resources:
           requests:
             cpu: 80m

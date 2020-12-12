@@ -7,10 +7,10 @@ import os
 load_dotenv()
 
 app = Sanic(name="awesome_book_store")
-user = os.getenv('user')
-password = os.getenv('password')
-host = os.getenv('host')
-port = os.getenv('port')
+user = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+host = os.getenv('DB_HOST')
+port = os.getenv('DB_PORT')
 
 psql_db = PostgresqlDatabase('book_store', user=user, password=password, host=host, port=port)
 
