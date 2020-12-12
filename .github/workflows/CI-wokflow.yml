@@ -18,6 +18,7 @@ jobs:
     - name: install pipenv & dependencies 
       run:  |
         pip install pipenv
+        pip install -U python-dotenv
         pipenv install --deploy --dev 
       
     - name: run the linter
