@@ -1,9 +1,18 @@
 from peewee import *
 from sanic import Sanic
 from sanic.response import json
+from playhouse.shortcuts import model_to_dict
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 app = Sanic(name="awesome_book_store")
-psql_db = PostgresqlDatabase('book_store', user='nirgalon')
+user = os.getenv('DB_USER')
+password = os.getenv('DB_PASSWORD')
+host = os.getenv('DB_HOST')
+port = os.getenv('DB_PORT')
+
+psql_db = PostgresqlDatabase('book_store', user=user, password=password, host=host, port=port)
 
 
 class Person(Model):
@@ -15,6 +24,10 @@ class Person(Model):
         database = psql_db
 
 
+with psql_db:
+    psql_db.create_tables([Person])
+
+
 @app.route('/person', methods=["POST"])
 async def create_person(request):
     new_person = Person(
@@ -23,18 +36,20 @@ async def create_person(request):
         age=int(request.json["age"]),
     )
     new_person.save()
-    return json(new_person)
+    return json(model_to_dict(new_person))
 
 
 @app.route('/person',)
 async def create_person(request):
-    persons = Person.select()
-    return json(persons)
+    persons = Person.select().dicts()
+    results = [person for person in persons]
+    return json(results)
 
 
 @app.route('/')
 async def test(request):
     return json({'hello': 'world'})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)

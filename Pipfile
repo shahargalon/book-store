@@ -10,6 +10,8 @@ pycodestyle = "*"
 sanic = "*"
 gunicorn = "*"
 peewee = "*"
+psycopg2 = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"

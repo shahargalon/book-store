@@ -18,10 +18,11 @@ jobs:
     - name: install pipenv & dependencies 
       run:  |
         pip install pipenv
+        pip install -U python-dotenv
         pipenv install --deploy --dev 
       
     - name: run the linter
-      run: pipenv run pycodestyle .
+      run: pipenv run pycodestyle --max-line-length=120 .
 
     - name: run the tests
       run: pipenv run python -m unittest
